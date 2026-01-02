@@ -1,0 +1,35 @@
+{
+  "tests": [
+    {
+      "name": "Get all teachers",
+      "method": "GET",
+      "path": "/?action=teachers",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "teachers": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get all students",
+      "method": "GET",
+      "path": "/?action=students",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "students": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get analytics",
+      "method": "GET",
+      "path": "/?action=analytics",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "total_students": "number",
+        "total_teachers": "number"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

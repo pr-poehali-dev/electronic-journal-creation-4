@@ -14,8 +14,7 @@ import {
   TableHeader,
   TableRow,
 } from './ui/table';
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from './ui/chart';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, Tooltip } from 'recharts';
 
 interface Teacher {
   id: number;
@@ -175,7 +174,7 @@ export default function DirectorDashboard() {
                     <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
                     <XAxis dataKey="subject" className="text-xs" />
                     <YAxis domain={[0, 5]} />
-                    <ChartTooltip content={<ChartTooltipContent />} />
+                    <Tooltip />
                     <Bar dataKey="avgGrade" fill="hsl(var(--primary))" radius={[8, 8, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
@@ -188,7 +187,7 @@ export default function DirectorDashboard() {
                     <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
                     <XAxis dataKey="month" />
                     <YAxis domain={[90, 100]} />
-                    <ChartTooltip content={<ChartTooltipContent />} />
+                    <Tooltip />
                     <Line 
                       type="monotone" 
                       dataKey="value" 
@@ -221,7 +220,7 @@ export default function DirectorDashboard() {
                           <Cell key={`cell-${index}`} fill={entry.color} />
                         ))}
                       </Pie>
-                      <ChartTooltip content={<ChartTooltipContent />} />
+                      <Tooltip />
                     </PieChart>
                   </ResponsiveContainer>
                 </div>
